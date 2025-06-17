@@ -44,15 +44,18 @@ By following these instructions, you can efficiently automate processes within E
 import streamlit as st
 
 # Specify the path to the file you want to be downloadable
-file_path = "C:/Users/gummadi.vr/A3 PASS AUTOMATION/A3cAutomation.zip"
+import streamlit as st
+import requests
+from io import BytesIO
 
-# Create a download button that allows users to download the specified file
+# URL of the file you want to download
+url="https://pgone-my.sharepoint.com/:u:/g/personal/gummadi_vr_pg_com/EYvFwPXEKbFLuJFSncuGseABXkRRtD7dNNGFHnlmKSKdEQ"
 
-with open(file_path, "rb") as file:
-        st.download_button(
-            label="Download A3C Automation Zip File",
-            data=file,
-            file_name="A3cAutomation.zip"
-        )
+st.markdown(
+    f'<a href="{url}" target="_blank">'
+    '<button style="padding: 10px 20px; font-size: 16px;">Open A3C Automation Zip File</button>'
+    '</a>',
+    unsafe_allow_html=True
+)
 
 
